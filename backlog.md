@@ -1,21 +1,17 @@
-# backlog.md — KelimeAvcisi Fikir / Özellik Havuzu
+# backlog.md — Kelime Avcısı Pro Fikir Havuzu
 
-Bu dosya henüz önceliklendirilmemiş, "bir gün yapılabilir" fikirler ve özellik talepleri içindir. Bir fikir somutlaşıp sıraya girdiğinde buradan çıkar, `task.md`ye taşınır.
-
-## Fikirler
-
-_(henüz boş — yeni bir fikir geldiğinde aşağıdaki şablonla ekle)_
-
-## Koddaki TODO / FIXME Notları
-
-_(kodda TODO/FIXME notu bulunamadı)_
+- "Öğrendim" işareti ve öğrenilen kelimeleri hatırlatmadan çıkarma (`reminder.html`'deki fikir).
+- Aralıklı tekrar (Leitner kutuları / SM-2) — `{ad, not, kutu, sonraki}`.
+- Hatırlatma aralığını ayarlanabilir yap (şu an sabit 5 dk).
+- Kaynak dil seçimi (Translate linkinde `sl=en` sabit).
+- CSV içe aktarma; `chrome.storage.sync` ile cihazlar arası eşitleme.
+- Bildirime "Anlamı göster" / "Öğrendim" butonları (`buttons` + `onButtonClicked`).
 
 ## Ekleme Şablonu
 
 ```markdown
 ### Başlık
-
 - **Kategori:** yeni özellik / iyileştirme / teknik borç / araştırma
-- **Neden istendi:** kısa gerekçe
-- **Notlar:** büyüklük tahmini, bağımlılıklar, riskler
+- **Neden:** kısa gerekçe
+- **Notlar:** büyüklük, bağımlılıklar, riskler
 ```

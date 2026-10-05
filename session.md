@@ -1,43 +1,26 @@
-# session.md — KelimeAvcisi Oturum Günlüğü
-
-Her çalışma oturumunda buraya kısa bir kayıt düşülür: ne yapıldı, hangi kararlar alındı, sıradaki adım ne. Amaç, bir sonraki oturuma (veya başka bir geliştiriciye/Claude örneğine) hızlıca bağlam aktarmak.
-
----
-
-## Şablon
-
-```markdown
-## YYYY-AA-GG
-
-**Yapılanlar:**
-- ...
-
-**Alınan kararlar / neden:**
-- ...
-
-**Açık sorunlar / bilinen eksikler:**
-- ...
-
-**Sıradaki adım:**
-- ...
-```
+# session.md — Kelime Avcısı Pro Oturum Günlüğü
 
 ---
 
 ## 2026-10-05
 
-**Yapılanlar:**
-- Eksik proje çalışma dosyaları oluşturuldu: `architect.md`, `backlog.md`, `CLAUDE.md`, `session.md`, `task.md`.
-- İçerik; README, dosya yapısı, bağımlılık dosyaları ve git geçmişinden çıkarıldı.
+- Şablondan üretilmiş çalışma dosyaları kod okunarak yeniden yazıldı.
+- Tespitler: bildirim simgesi (`icons/icon128.png`) eksik; `reminder.js` içinde manifest JSON'u var ve sayfa hiçbir yerden açılmıyor; popup'ta kaçışsız `innerHTML`.
 
-**Açık sorunlar / bilinen eksikler:**
-- Repo kökünde `.gitignore` yok — `venv/`, `__pycache__/`, `.env`, build çıktıları için eklenmeli.
-- README yok — kurulum/çalıştırma adımları belgelenmeli.
-- Otomatik test bulunamadı — kritik akışlar için en azından duman (smoke) testleri eklenmeli.
+---
 
-**Sıradaki adım:**
-- `CLAUDE.md` ve `architect.md` içeriğini gözden geçirip proje sahibinin bilgisiyle tamamla.
+## 2026-05-13
 
-### Bu tarihten önceki son commit'ler (referans)
+- v1.3 tek commit ile yüklendi. `KeimeEzber.7z` içinde 2026-03-23 / 04-11 tarihli önceki sürüm dosyaları var (v1.2: 10 dk hatırlatma, bildirim izni yok).
 
-- 2026-05-13 — first commit
+---
+
+### Kayıt Şablonu
+
+```markdown
+## YYYY-AA-GG
+**Yapılanlar:** ...
+**Kararlar / neden:** ...
+**Açık sorunlar:** ...
+**Sıradaki adım:** ...
+```

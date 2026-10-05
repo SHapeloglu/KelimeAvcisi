@@ -1,45 +1,23 @@
-# architect.md — KelimeAvcisi Mimari Referansı
-
-Bu dosya projenin yapısının hızlı-referans özetidir. Kod değiştikçe güncel tutun.
-
-## Genel Bakış
-
-_README'de açıklama bulunamadı. Projenin amacını buraya bir-iki cümleyle yazın._
-
-## Teknoloji Yığını
-
-- Statik HTML/CSS/JS
-
-## Dizin Yapısı
+# architect.md — Kelime Avcısı Pro Mimarisi
 
 ```
-KeimeEzber.7z
-background.js
-manifest.json
-popup.html
-popup.js
-reminder.html
-reminder.js
+Sayfada seçim ─sağ tık "ekleKelime"─► background.js ─► storage.local.kelimeler (tekrar kontrolü, büyük/küçük harf duyarsız)
+chrome.alarms "kelimeHatirlat" (5 dk) ─► background.js ─► rastgele kelime ─► chrome.notifications ("kelime: not")
+popup.js ◄──► storage.local { kelimeler, hatirlaticiAktif }
+   ├─ not düzenle (oninput) / sil (indeks)
+   ├─ Google Translate linki (sl=en → tl=tr)
+   └─ CSV indir (UTF-8 BOM, ';' ayraç, "kelimelerim.csv")
 ```
 
-## Modüller / Kaynak Dosyalar
+## Depolama
 
-- `background.js` — Sağ tık menüsünü oluştur
-- `popup.js`
-- `reminder.js`
-
-## Giriş Noktaları ve Yapılandırma
-
-_(belirgin giriş noktası bulunamadı)_
-
-## Dağıtım / Çalışma Ortamı
-
-- GitHub: https://github.com/SHapeloglu/KelimeAvcisi
-
-## Diğer Dokümanlar
-
-_(yok)_
+| Anahtar | Tip | Varsayılan |
+|---|---|---|
+| `kelimeler` | `Array<string \| {ad: string, not: string}>` | `[]` |
+| `hatirlaticiAktif` | bool | `true` |
 
 ## Mimari Kararlar
 
-_Önemli tasarım kararlarını ve gerekçelerini buraya ekleyin (ör. "X yerine Y seçildi çünkü ...")._
+- **Rastgele tekrar** (aralıklı tekrar değil): basitlik için; öğrenme durumu tutulmuyor.
+- **Geriye uyumluluk**: v1.2'de kelimeler düz string'di; v1.3 nesneye geçti ama eski veriyi dönüştürmeden okuyabiliyor.
+- **Çeviri dış servise link**: API anahtarı gerektirmesin diye.
